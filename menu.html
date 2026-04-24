@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>三位一体(トリニティ)ヒーリング - 心・身体・現実を整える</title>
+    <title>ご提供メニュー - Trinity Healing</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,13 +71,14 @@
             }
         }
 
-        .fluid-h1 { font-size: clamp(1.75rem, 4vw, 3rem); }
         .fluid-h2 { font-size: clamp(1.5rem, 3.5vw, 2.5rem); }
-        .fluid-h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
         .fluid-p { font-size: clamp(1rem, 1.5vw, 1.125rem); }
         
-        .hero-overlay { background: linear-gradient(to bottom, rgba(11, 15, 26, 0.4) 0%, rgba(11, 15, 26, 1) 100%); }
-        
+        .fade-up { 
+            visibility: hidden; 
+            will-change: transform, opacity; 
+        }
+
         .btn-pulse { position: relative; }
         .btn-pulse::before { 
             content: ''; 
@@ -88,16 +90,11 @@
             will-change: transform, opacity;
         }
         @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(1.15); opacity: 0; } }
-        
-        .fade-up, .hero-el { 
-            visibility: hidden;
-            will-change: transform, opacity;
-        }
-        section { scroll-margin-top: 80px; }
+
         .overflow-hidden { overflow: hidden; }
     </style>
 </head>
-<body class="font-sans leading-loose">
+<body class="font-sans leading-loose pt-20">
 
     <!-- Header -->
     <header class="fixed top-0 left-0 w-full z-50 bg-navy-900/90 backdrop-blur-md border-b border-white/5 transition-all duration-300">
@@ -130,144 +127,105 @@
         </div>
     </header>
 
-    <!-- 1. Hero Section -->
-    <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20 px-6 mt-20 md:mt-0 text-center">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1508614999368-9260051292e5?q=80&w=2000&auto=format&fit=crop" alt="光と空間" class="w-full h-full object-cover opacity-20 mix-blend-screen grayscale">
-            <div class="absolute inset-0 hero-overlay"></div>
-        </div>
-        <div class="relative z-10 w-full max-w-4xl mx-auto mt-12">
-            <p class="font-serif text-gold font-medium tracking-widest mb-6 fade-up hero-el text-sm md:text-base">
-                <span class="text-unit">整体でも、カウンセリングでも</span><br class="md:hidden"><span class="text-unit">変わりきらなかったあなたへ</span>
-            </p>
-            <h1 class="font-serif fluid-h1 leading-relaxed text-light mb-12 fade-up hero-el">
-                <span class="text-unit">何度も通っているのに、</span><br class="md:hidden">
-                <span class="text-unit">また戻ってしまう。</span><br>
-                <span class="text-unit">気持ちは軽くなっても、</span><br class="md:hidden">
-                <span class="text-unit">現実は変わらない。</span><br>
-                <span class="text-unit">身体を整えても、</span><br class="md:hidden">
-                <span class="text-unit">その場だけで終わる。</span>
-            </h1>
-            <div class="h-px w-16 bg-gold mx-auto mb-10 fade-up hero-el"></div>
-            <p class="fluid-p text-light/80 leading-loose fade-up hero-el">
-                <span class="text-unit">もしそんな感覚があるなら、</span><br class="md:hidden">
-                <span class="text-unit">それはあなたの問題ではなく、</span><br>
-                <span class="text-unit">アプローチする場所が</span><br class="md:hidden">
-                <span class="text-unit">違っていたのかもしれません。</span>
-            </p>
-        </div>
-    </section>
+    <main class="py-24 px-6 bg-navy-800 relative overflow-hidden min-h-screen">
+        <!-- 背景装飾 -->
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-light-purple rounded-full blur-3xl opacity-[0.02] -translate-y-1/2 translate-x-1/3 pointer-events-none transform-gpu"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-light-blue rounded-full blur-3xl opacity-[0.02] translate-y-1/3 -translate-x-1/3 pointer-events-none transform-gpu"></div>
 
-    <!-- 2. Problem & Mechanism -->
-    <section class="py-24 px-6 bg-navy-900">
-        <div class="max-w-3xl mx-auto text-center space-y-24">
-            <div class="fade-up">
-                <h2 class="font-serif fluid-h2 text-light mb-10">
-                    <span class="text-unit">なぜ変わりきらないのか</span>
-                </h2>
-                <p class="fluid-p text-light/80 mb-6 leading-relaxed">
-                    これまでの方法はすべて正しいです。<br class="md:hidden">
-                    ・心を整える ・身体を整える
-                </p>
-                <p class="fluid-p text-light/80 font-medium">
-                    <span class="text-unit">ただ一つだけ、</span><span class="text-unit">抜けていた視点があります。</span><br>
-                    <span class="text-unit text-gold mt-4 text-xl md:text-2xl block leading-relaxed font-bold">それは「すべてはつながっている」<br class="md:hidden">ということです。</span>
-                </p>
-            </div>
-
-            <div class="fade-up bg-navy-800 p-10 md:p-16 rounded-2xl relative border border-white/5 shadow-2xl text-center">
-                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-navy-900 px-6 py-2 rounded-full border border-white/10 text-gold-light font-serif tracking-widest text-sm shadow-sm">
-                    TRUTH
-                </div>
-                <h3 class="font-serif fluid-h3 text-light mb-8">本当はこう動いている</h3>
-                <div class="space-y-6 fluid-p text-light/80 mb-8 leading-relaxed">
-                    <p>
-                        同じ状況でも、整った状態で見るのか、<br class="md:hidden">不安や焦りの中で見るのかで、<br class="md:hidden">
-                        <span class="font-bold text-gold-light text-unit">全く違う判断に、</span><br class="md:hidden">
-                        <span class="font-bold text-gold-light text-unit">なります。</span>
-                    </p>
-                </div>
-                <p class="font-serif text-lg text-light">本来はすべてつながっています。</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. Concept (世界線調律所とは) -->
-    <section id="about" class="py-24 px-6 bg-navy-800 relative overflow-hidden border-t border-white/5">
-        <div class="max-w-4xl mx-auto relative z-10 text-center">
-            <div class="mb-16 fade-up">
-                <p class="text-gold font-medium tracking-widest mb-4">CONCEPT</p>
-                <h2 class="font-serif fluid-h2 text-light">世界線調律所とは</h2>
-            </div>
-            
-            <div class="space-y-12 font-serif text-light/80 leading-loose fluid-p text-center">
-                <div class="fade-up px-4">
-                    <p class="mb-4">私たちは、現実を無理に変えることはしません。</p>
-                    <p>なぜなら現実は、行動や努力だけで作られているのではなく、<br class="md:hidden">その前にある<span class="font-bold text-light">「前提(情報)」</span>によって決まっているからです。</p>
-                </div>
-                <div class="fade-up bg-navy-900 p-8 md:p-12 rounded-2xl mx-auto max-w-2xl border border-white/5 shadow-inner">
-                    <p class="mb-6"><span class="text-unit text-xl font-medium text-light">無意識の前提を整えることで</span></p>
-                    <ul class="text-light font-medium space-y-4 mb-6 inline-block text-left">
-                        <li><span class="text-gold mr-2">・</span>身体がゆるみ</li>
-                        <li><span class="text-gold mr-2">・</span>思考が静まり</li>
-                        <li><span class="text-gold mr-2">・</span>行動が自然に変わる</li>
-                    </ul>
-                    <p class="text-gold-light text-lg mb-2">その結果として</p>
-                    <p class="text-xl md:text-2xl text-light font-bold">現実そのものが変わっていきます。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. Menu Section (メニュー詳細への導線復活) -->
-    <section id="menu" class="py-24 px-6 bg-navy-900 relative border-t border-white/5">
-        <div class="max-w-4xl mx-auto text-center">
-            <div class="mb-12 fade-up">
+        <div class="max-w-5xl mx-auto relative z-10">
+            <div class="text-center mb-16 fade-up">
                 <p class="text-gold font-medium tracking-widest mb-4">MENU</p>
-                <h2 class="font-serif fluid-h2 text-light">ご提供メニュー</h2>
-            </div>
-            <div class="fade-up px-4">
-                <p class="fluid-p text-light/80 leading-loose mb-12">
+                <h1 class="font-serif fluid-h2 text-light">ご提供メニュー</h1>
+                <p class="fluid-p text-light/80 leading-loose mt-6 px-4">
                     各種ヒーリングセッションや、不動産の位相調律など、<br class="md:hidden">あなたの現実を整えるメニューをご用意しています。
                 </p>
-                <a href="menu.html" class="inline-block bg-transparent border-2 border-gold hover:bg-gold text-gold hover:text-navy-900 font-serif font-medium text-lg md:text-xl py-4 px-10 md:px-12 rounded-full transition-all duration-300 transform-gpu hover:-translate-y-1 shadow-lg">
-                    <span class="text-unit tracking-widest">ご提供メニューの詳細はこちら</span>
-                </a>
             </div>
-        </div>
-    </section>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- セッション1 -->
+                <div class="bg-navy-900 p-8 md:p-10 rounded-2xl border border-white/5 fade-up flex flex-col shadow-sm">
+                    <h2 class="font-serif text-xl md:text-2xl text-gold-light mb-4 font-bold border-b border-white/10 pb-4">
+                        情報変換ヒーリングセッション<br>
+                        <span class="text-sm text-light/60 font-normal tracking-wider">(対面 | 都内限定)</span>
+                    </h2>
+                    <div class="text-light/80 mb-6 text-sm leading-relaxed flex-grow space-y-4">
+                        <p>身体・感情・思考など、全体の状態を整える対面セッションです。</p>
+                        <p>日常的な不調や違和感、言語化しづらいストレスや停滞感に対して、根本的な状態の調整を行います。</p>
+                        <p>落ち着いた空間の中で、現在の状態を丁寧に観測し、本来のバランスへと整えていきます。</p>
+                    </div>
+                    <div class="mt-auto pt-4">
+                        <p class="text-light/60 text-xs mb-3">※東京都内での対面セッションとなります。</p>
+                        <p class="font-serif text-2xl text-light">60分 <span class="text-gold font-bold text-3xl mx-1">22,000</span><span class="text-base">円(税込)</span></p>
+                    </div>
+                </div>
 
-    <!-- 5. Profile Section (プロフィールへの導線復活) -->
-    <section id="profile" class="py-24 px-6 bg-navy-800 relative border-t border-white/5">
-        <div class="max-w-4xl mx-auto text-center">
-            <div class="mb-12 fade-up">
-                <p class="text-gold font-medium tracking-widest mb-4">PROFILE</p>
-                <h2 class="font-serif fluid-h2 text-light">この世界線に至るまで</h2>
-            </div>
-            <div class="fade-up px-4">
-                <p class="fluid-p text-light/80 leading-loose mb-12 max-w-2xl mx-auto">
-                    私はもともと、スピリチュアルとは縁もゆかりもない人間でした。<br class="md:hidden">徹底した現実主義から、なぜ「意識からの現実創造」へと至ったのか。<br class="md:hidden">その道のりと想いをお話しします。
-                </p>
-                <a href="profile.html" class="inline-block bg-transparent border-2 border-gold hover:bg-gold text-gold hover:text-navy-900 font-serif font-medium text-lg md:text-xl py-4 px-10 md:px-12 rounded-full transition-all duration-300 transform-gpu hover:-translate-y-1 shadow-lg">
-                    <span class="text-unit tracking-widest">代表者プロフィールを読む</span>
-                </a>
-            </div>
-        </div>
-    </section>
+                <!-- セッション2 -->
+                <div class="bg-navy-900 p-8 md:p-10 rounded-2xl border border-white/5 fade-up flex flex-col shadow-sm" data-delay="0.2">
+                    <h2 class="font-serif text-xl md:text-2xl text-gold-light mb-4 font-bold border-b border-white/10 pb-4">
+                        遠隔ヒーリング
+                    </h2>
+                    <div class="text-light/80 mb-6 text-sm leading-relaxed flex-grow space-y-4">
+                        <p>対面でのセッションが難しい方に向けた、遠隔での状態調整です。</p>
+                        <p>時間や場所に関係なく、必要なタイミングで全体のバランスを整えます。</p>
+                        <p>身体的な違和感だけでなく、思考や感情の状態にもアプローチします。</p>
+                    </div>
+                    <div class="mt-auto pt-4">
+                        <p class="font-serif text-2xl text-light">1回 <span class="text-gold font-bold text-3xl mx-1">11,000</span><span class="text-base">円(税込)</span></p>
+                    </div>
+                </div>
 
-    <!-- 6. Final CTA (初回施術申し込みボタン復活) -->
-    <section class="py-24 px-6 bg-navy-900 text-light relative overflow-hidden border-t border-white/5">
-        <div class="max-w-3xl mx-auto text-center relative z-10 px-4">
-            <div class="fade-up">
-                <p class="font-serif fluid-h3 leading-loose mb-10">
-                    あなたが本来選ぶべき現実に、自然と整っていく。<br class="md:hidden">その変化を、ぜひ一度ご体感ください。
-                </p>
+                <!-- セッション3 -->
+                <div class="bg-navy-900 p-8 md:p-10 rounded-2xl border-2 border-gold/30 shadow-lg fade-up flex flex-col relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-gold text-navy-900 text-xs font-bold px-4 py-1.5 rounded-bl-lg tracking-wider">所長特別メニュー</div>
+                    <h2 class="font-serif text-xl md:text-2xl text-gold-light mb-4 font-bold border-b border-gold/20 pb-4 pr-20">
+                        不動産 位相調律セッション
+                    </h2>
+                    <div class="text-light/80 mb-6 text-sm leading-relaxed flex-grow space-y-4">
+                        <p>不動産の購入や売却において、物件や条件ではなく「判断の状態」を整えるセッションです。</p>
+                        <p>
+                            焦りや不安の中で見るのかで、<br class="md:hidden">
+                            <span class="font-bold text-gold-light text-unit">全く違う判断に、</span><br class="md:hidden">
+                            <span class="font-bold text-gold-light text-unit">なります。</span>
+                        </p>
+                        <p>最適な選択が自然に定まる状態をつくり、中立の立場から意思決定の精度を整えます。</p>
+                    </div>
+                    <div class="mt-auto pt-4">
+                        <p class="font-serif text-2xl text-light mb-4">初回(60~90分) <span class="text-gold font-bold text-3xl mx-1">33,000</span><span class="text-base">円(税込)</span></p>
+                        <a href="specialmenu.html" class="inline-block text-gold text-sm hover:text-gold-light border-b border-gold/30 hover:border-gold pb-0.5 transition-colors">
+                            ▶︎ 特別メニューの詳細はこちら
+                        </a>
+                    </div>
+                </div>
+
+                <!-- セッション4 -->
+                <div class="bg-navy-900 p-8 md:p-10 rounded-2xl border border-white/5 fade-up flex flex-col shadow-sm" data-delay="0.2">
+                    <h2 class="font-serif text-xl md:text-2xl text-gold-light mb-4 font-bold border-b border-white/10 pb-4">
+                        不動産・空間に対する調律ヒーリング
+                    </h2>
+                    <div class="text-light/80 mb-6 text-sm leading-relaxed flex-grow space-y-4">
+                        <p>情報変換ヒーリングの観点から、土地や建物、空間・環境全体の状態を整えるサポートです。</p>
+                        <ul class="text-light/70 text-sm my-3 space-y-2 pl-3 border-l-2 border-gold/30">
+                            <li>・土地や建物に対する違和感の調整</li>
+                            <li>・空間や環境のバランスの調律</li>
+                            <li>・土地や建物に残る影響のリセット<br class="md:hidden"><span class="text-xs">(浄化的アプローチ)</span></li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto pt-4">
+                        <p class="font-serif text-2xl text-light"><span class="text-gold font-bold text-3xl mr-1">22,000</span><span class="text-base">円(税込)〜</span></p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="mt-24 text-center fade-up">
                 <a href="reserve.html" class="btn-pulse inline-block bg-gold border-2 border-gold hover:bg-transparent text-navy-900 hover:text-gold font-serif font-medium text-lg md:text-xl py-5 px-10 md:px-12 rounded-full transition-all duration-300 transform-gpu hover:-translate-y-1 shadow-lg hover:shadow-xl">
-                    <span class="text-unit tracking-widest">【初回施術のお申し込み】</span>
+                    <span class="tracking-widest">【セッションのお申し込み】</span>
                 </a>
             </div>
+            
         </div>
-    </section>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-navy-900 py-12 text-center border-t border-white/10">
@@ -283,7 +241,7 @@
         <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeTokushoModal()"></div>
         <div class="bg-navy-800 border border-white/10 rounded-2xl p-6 md:p-10 max-w-2xl w-[90%] max-h-[85vh] overflow-y-auto relative z-10 shadow-2xl transform scale-95 transition-transform duration-300" id="tokusho-modal-content">
             <button onclick="closeTokushoModal()" class="absolute top-4 right-4 text-light/60 hover:text-gold text-2xl focus:outline-none">×</button>
-            <h2 class="font-serif text-xl md:text-2xl text-gold-light mb-8 font-bold border-b border-white/10 pb-4 text-center">特定商取引法に基づく表記</h2>
+            <h2 class="font-serif text-xl md:text-2xl text-gold-light mb-8 font-bold border-b border-white/10 pb-4 text-center leading-relaxed">特定商取引法に基づく表記</h2>
             <div class="text-light/80 text-sm space-y-6 leading-relaxed text-left">
                 <dl class="space-y-4">
                     <div class="border-b border-white/5 pb-2">
@@ -308,7 +266,7 @@
                     </div>
                     <div class="border-b border-white/5 pb-2">
                         <dt class="text-gold-light font-bold">販売URL</dt>
-                        <dd>【あなたのホームページURL】</dd>
+                        <dd>https://worldlinetuning.net/</dd>
                     </div>
                     <div class="border-b border-white/5 pb-2">
                         <dt class="text-gold-light font-bold">販売価格</dt>
@@ -328,26 +286,26 @@
                     </div>
                     <div class="border-b border-white/5 pb-2">
                         <dt class="text-gold-light font-bold">商品(サービス)の提供時期</dt>
-                        <dd>・ご入金確認後、3日以内に日程調整のご連絡をいたします ・セッションはご予約日時に、オンラインまたは遠隔にて提供いたします</dd>
+                        <dd>・ご入金確認後、3日以内に日程調整のご連絡をいたします<br>・セッションはご予約日時に、オンラインまたは遠隔にて提供いたします</dd>
                     </div>
                     <div class="border-b border-white/5 pb-2">
                         <dt class="text-gold-light font-bold">返品・返金について</dt>
-                        <dd>本サービスは役務提供の特性上、 サービス提供後の返金はいたしかねます。</dd>
+                        <dd>本サービスは役務提供の特性上、サービス提供後の返金はいたしかねます。</dd>
                     </div>
                     <div class="border-b border-white/5 pb-2">
                         <dt class="text-gold-light font-bold">キャンセルポリシー</dt>
-                        <dd>・ご予約日の2日前までのキャンセル:無料 ・前日キャンセル:料金の50% ・当日キャンセルまたは無断キャンセル:料金の100%</dd>
+                        <dd>・ご予約日の2日前までのキャンセル:無料<br>・前日キャンセル:料金の50%<br>・当日キャンセルまたは無断キャンセル:料金の100%</dd>
                     </div>
                 </dl>
                 
                 <div class="mt-8 pt-6 border-t border-white/10 space-y-6">
                     <div>
                         <p class="text-gold-light font-bold mb-2">表現および再現性について</p>
-                        <p>本サービスは、心身や環境に対するサポートを目的としたものであり、 効果や体感には個人差があり、特定の結果を保証するものではありません。</p>
+                        <p>本サービスは、心身や環境に対するサポートを目的としたものであり、効果や体感には個人差があり、特定の結果を保証するものではありません。</p>
                     </div>
                     <div>
                         <p class="text-gold-light font-bold mb-2">サービスの性質について</p>
-                        <ul class="space-y-1 list-none">
+                        <ul class="space-y-1">
                             <li>・本サービスは医療行為ではありません</li>
                             <li>・診断・治療を目的としたものではありません</li>
                             <li>・通院中・服薬中の方は医師にご相談のうえご利用ください</li>
@@ -355,22 +313,22 @@
                     </div>
                     <div>
                         <p class="text-gold-light font-bold mb-2">不動産コンサルティングに関する注意事項</p>
-                        <ul class="space-y-1 list-none">
-                            <li>・本サービスに含まれる不動産に関する助言は、 一般的な情報提供およびセカンドオピニオンとして提供するものです</li>
+                        <ul class="space-y-1">
+                            <li>・本サービスに含まれる不動産に関する助言は、一般的な情報提供およびセカンドオピニオンとして提供するものです</li>
                             <li>・売買・契約等の最終判断は、お客様ご自身の責任にてお願いいたします</li>
                         </ul>
                     </div>
                     <div>
                         <p class="text-gold-light font-bold mb-2">提供形式について</p>
-                        <p>本サービスは以下の形式で提供されます：<br>・オンラインセッション(Zoom等) ・遠隔セッション(非対面)</p>
+                        <p>本サービスは以下の形式で提供されます：<br>・オンラインセッション(Zoom等)<br>・遠隔セッション(非対面)</p>
                     </div>
                     <div>
-                        <p class="text-gold-light font-bold mb-2">宗教・勧勧誘について</p>
+                        <p class="text-gold-light font-bold mb-2">宗教・勧誘について</p>
                         <p>本サービスは、特定の宗教への勧誘や加入を目的としたものではありません。</p>
                     </div>
                     <div>
                         <p class="text-gold-light font-bold mb-2">個人情報の取り扱い</p>
-                        <p>取得した個人情報は、サービス提供およびご連絡の目的にのみ使用し、 適切に管理いたします。</p>
+                        <p>取得した個人情報は、サービス提供およびご連絡の目的にのみ使用し、適切に管理いたします。</p>
                     </div>
                 </div>
             </div>
@@ -527,39 +485,18 @@
             document.body.classList.remove('overflow-hidden');
         }
 
-        document.addEventListener("DOMContentLoaded", (event) => {
+        document.addEventListener("DOMContentLoaded", () => {
             gsap.registerPlugin(ScrollTrigger);
-            
-            // ヒーローアニメーション
-            gsap.set(".hero-el", { y: 30, autoAlpha: 0 });
-            gsap.to(".hero-el", {
-                y: 0, autoAlpha: 1, 
-                duration: 1.2, stagger: 0.2, ease: "power3.out", delay: 0.2
-            });
 
-            // スクロールアニメーション
-            gsap.set('.fade-up:not(.hero-el)', { y: 40, autoAlpha: 0 });
-            gsap.utils.toArray('.fade-up:not(.hero-el)').forEach(element => {
+            gsap.set('.fade-up', { y: 40, autoAlpha: 0 });
+            gsap.utils.toArray('.fade-up').forEach(element => {
                 gsap.to(element, {
-                    y: 0, autoAlpha: 1, duration: 0.8,
-                    ease: "power3.out",
+                    y: 0, autoAlpha: 1, duration: 0.8, ease: "power3.out",
                     scrollTrigger: {
-                        trigger: element,
-                        start: "top 92%",
-                        toggleActions: "play none none reverse" 
+                        trigger: element, start: "top 90%", toggleActions: "play none none reverse" 
                     }
                 });
             });
-
-            // アンカーリンク補正
-            if (window.location.hash) {
-                const target = document.getElementById(window.location.hash.substring(1));
-                if (target) {
-                    setTimeout(() => {
-                        window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 80, behavior: "smooth" });
-                    }, 300);
-                }
-            }
         });
     </script>
 </body>
