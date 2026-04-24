@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>代表者プロフィール - Trinity Healing</title>
+    <title>ご予約 - Trinity Healing</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,7 +52,7 @@
             line-break: strict;
             overflow-wrap: break-word;
             
-            /* 文節での改行を最適化 */
+            /* 文節での改行を最適化し、スマホでの読みやすさを向上 */
             word-break: auto-phrase;
             text-wrap: pretty;
         }
@@ -66,7 +66,7 @@
             vertical-align: top; 
         }
 
-        /* スマホ環境：画面幅に合わせた自然な折り返しを優先 */
+        /* スマホ環境：不自然な空白を作らないよう、通常の折り返しを優先 */
         @media (max-width: 767px) {
             .text-unit { 
                 display: inline; 
@@ -74,7 +74,6 @@
             }
         }
 
-        .fluid-h1 { font-size: clamp(1.75rem, 4vw, 3rem); }
         .fluid-h2 { font-size: clamp(1.5rem, 3.5vw, 2.5rem); }
         .fluid-p { font-size: clamp(1rem, 1.5vw, 1.125rem); }
         
@@ -82,20 +81,11 @@
             visibility: hidden; 
             will-change: transform, opacity; 
         }
-
-        /* ボタンの波紋アニメーション */
-        .btn-pulse { position: relative; }
-        .btn-pulse::before { 
-            content: ''; 
-            position: absolute; top: 0; left: 0; right: 0; bottom: 0; 
-            border-radius: 9999px; 
-            border: 2px solid #D4AF37; 
-            animation: pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite; 
-            z-index: -1; 
-            will-change: transform, opacity;
-        }
-        @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(1.15); opacity: 0; } }
-
+        
+        /* カレンダーアイコンを白系にする */
+        ::-webkit-calendar-picker-indicator { filter: invert(1); opacity: 0.7; cursor: pointer; }
+        
+        /* モーダル表示時の背景固定 */
         .overflow-hidden { overflow: hidden; }
     </style>
 </head>
@@ -135,148 +125,146 @@
         </div>
     </header>
 
+    <!-- Booking Form Section -->
     <main class="py-24 px-6 bg-navy-800 relative overflow-hidden min-h-screen">
-        <!-- 背景装飾 -->
-        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-light-purple rounded-full blur-3xl opacity-[0.02] -translate-y-1/2 translate-x-1/3 pointer-events-none transform-gpu"></div>
-        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-light-blue rounded-full blur-3xl opacity-[0.02] translate-y-1/3 -translate-x-1/3 pointer-events-none transform-gpu"></div>
-
-        <div class="max-w-4xl mx-auto relative z-10">
+        <div class="max-w-3xl mx-auto relative z-10">
             <div class="text-center mb-16 fade-up">
-                <p class="text-gold font-medium tracking-widest mb-4">PROFILE</p>
-                <h1 class="font-serif fluid-h2 text-light text-center">
-                    この世界線に至るまで
+                <p class="text-gold font-medium tracking-widest mb-4">RESERVATION</p>
+                <h1 class="font-serif fluid-h2 text-light">
+                    <span class="text-unit">初回施術の</span><span class="text-unit">お申し込み</span>
                 </h1>
+                <p class="mt-6 text-light/80 fluid-p leading-relaxed px-4">
+                    あなたが本来選ぶべき現実に、自然と整っていく。<br class="md:hidden">
+                    その変化を、ぜひ一度ご体感ください。
+                </p>
+                <p class="mt-8 text-sm md:text-base text-gold-light font-medium bg-navy-900/50 inline-block px-6 py-3 rounded-full border border-white/5 mx-4">
+                    ※深い調整のための準備期間として、<br class="md:hidden">
+                    施術日は【お申し込みの1週間後以降】で承っております。
+                </p>
             </div>
-            
-            <div class="space-y-8 md:space-y-12 font-serif text-light/80 leading-loose fluid-p">
-                
-                <!-- ストーリー 1 -->
-                <div class="fade-up bg-navy-900 p-8 md:p-12 rounded-2xl shadow-sm border-l-4 border-gold">
-                    <p class="mb-6">
-                        私はもともと、スピリチュアルとは縁もゆかりもない人間でした。むしろ徹底した現実主義者です。<br class="md:hidden">
-                        <span class="font-bold text-light mt-2 block">お金・仕事・結果。</span>
-                        「目に見えるもの」だけが人生を変える――そう固く信じていました。
-                    </p>
-                    <p class="mb-6">
-                        就職氷河期に滑り込んだ会社で、すぐ結婚し、子どもが生まれました。配属先はリストラ担当の総務課。毎日、誰かの退職を処理しながら、<br class="md:hidden">
-                        <span class="font-medium text-light">「明日は自分かもしれない」</span>と思い続けていました。
-                    </p>
-                    <p class="mb-6 text-balance text-left">
-                        そのとき手に取ったのが当時流行していた『金持ち父さん 貧乏父さん』でした。家族を守るために、会社に依存しない生き方をしよう。そう決意した私は、不動産業界を武者修行のように渡り歩きました。
-                    </p>
-                    <p class="font-medium text-light text-lg">
-                        そして十年かけて、<span class="text-gold">ようやく不動産投資家という現実を手にしました。</span>
-                    </p>
+
+            <!-- 予約フォーム本体 -->
+            <form id="booking-form" class="bg-navy-900 p-8 md:p-12 rounded-2xl shadow-2xl border border-white/10 fade-up space-y-8">
+                <!-- お名前 -->
+                <div>
+                    <label for="name" class="block font-serif text-light font-medium mb-2">お名前 <span class="text-xs text-navy-900 font-bold bg-gold px-2 py-1 rounded ml-2">必須</span></label>
+                    <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg border border-white/10 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors text-light bg-navy-800 focus:bg-navy-900" placeholder="山田 太郎">
                 </div>
 
-                <!-- ストーリー 2 -->
-                <div class="fade-up bg-navy-900 p-8 md:p-12 rounded-2xl shadow-sm border-l-4 border-gold">
-                    <p class="mb-6 text-lg">
-                        でも、そこで気づいたことがあります。<br class="md:hidden">
-                        <span class="text-gold font-medium">不動産は、二つとして同じものがない。</span>
-                    </p>
-                    <p class="mb-6">
-                        どれだけ条件を絞り込んでも、「これだ」と思える物件との出会いは、狙って起きるものではない。タイミングや縁が重なって、初めて訪れる――それはもはや、<span class="font-medium text-light text-unit">奇跡に近いと思えるようになっていきました。</span>
-                    </p>
-                    <p class="mb-6 text-left">
-                        その感覚が、私を成功哲学の探求へと向かわせました。
-                    </p>
-                    <div class="pl-4 border-l border-white/10 mb-6 text-light/60 text-sm md:text-base space-y-2">
-                        <p>・納税日本一の斎藤一人さん。</p>
-                        <p>・幸せを法則として教えてくれた小林正観さん。</p>
-                        <p>・大谷翔平選手も愛読する中村天風さん。</p>
-                    </div>
-                    <p class="mb-6">
-                        三人の言葉は、驚くほど同じことを指していた。<br class="md:hidden">
-                        <span class="font-bold text-light text-unit">それは「科学だ」と思いました。</span>
-                    </p>
-                    <p>
-                        そしてその探求は、スピリチュアルへ、宇宙の真理へと向かっていき、気づけば、全国の神社参拝が日常になっていました。<br class="md:hidden">
-                        神社参拝で波動が整った頃、ご縁から会社役員のお声がかかり、<span class="font-medium text-gold-light">収入も倍になりました。</span>
-                    </p>
+                <!-- ふりがな -->
+                <div>
+                    <label for="kana" class="block font-serif text-light font-medium mb-2">ふりがな <span class="text-xs text-navy-900 font-bold bg-gold px-2 py-1 rounded ml-2">必須</span></label>
+                    <input type="text" id="kana" name="kana" required class="w-full px-4 py-3 rounded-lg border border-white/10 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors text-light bg-navy-800 focus:bg-navy-900" placeholder="やまだ たろう">
                 </div>
 
-                <!-- ストーリー 3 -->
-                <div class="fade-up bg-navy-900 p-8 md:p-12 rounded-2xl shadow-sm border-l-4 border-gold-light relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-gold opacity-5 rounded-bl-full"></div>
-                    
-                    <p class="mb-6 relative z-10 text-xl md:text-2xl font-medium text-light text-center py-6 border-b border-white/5">
-                        そんな流れの中で出会ったのが――<br>
-                        <span class="text-gold tracking-widest mt-2 block font-bold text-unit">情報変換ヒーリングです。</span>
-                    </p>
-                    
-                    <p class="mb-6 relative z-10 text-left">
-                        正直、最初は半信半疑でした。エネルギーを送るわけでも、何かを操作するわけでもない。<span class="font-medium text-light">「情報と意識を整える」というだけ。</span>
-                    </p>
-                    <p class="mb-6 relative z-10 text-left text-balance">
-                        「現実は、外で作られているのではない」「意識が現実を選んでいる」そう言われても、最初はまったくピンときませんでした。
-                    </p>
-                    <p class="mb-6 relative z-10 font-medium text-light text-left">
-                        ところが――<br class="md:hidden">
-                        瞑想を通じて自分の意識を整え始めたとき、明確な変化が起き始めました。無理に頑張らなくても、現実をコントロールしようとしなくても。
-                    </p>
-                    
-                    <ul class="text-light space-y-4 mb-8 pl-2 relative z-10 text-left">
-                        <li><span class="text-gold mr-3">・</span>人間関係が、自然と整っていく</li>
-                        <li><span class="text-gold mr-3">・</span>流れが、勝手に良くなっていく</li>
-                        <li><span class="text-gold mr-3">・</span>問題だと思っていたことが、気づいたら消えている</li>
-                    </ul>
-
-                    <p class="mb-8 relative z-10 text-lg md:text-xl text-gold-light font-medium text-center">
-                        まるで、世界のほうが勝手に整っていくような感覚。それを、体感として理解したとき――<span class="font-bold text-light text-unit">初めて、確信しました。</span>
-                    </p>
-                    
-                    <div class="bg-navy-800 p-6 rounded-xl border border-white/5 relative z-10 mb-8 shadow-inner text-center">
-                        <p class="font-bold text-light text-lg md:text-xl">
-                            現実は、変えにいくものではない。<br>
-                            整うことで、自然に変わるものだ。
-                        </p>
-                    </div>
-
-                    <p class="mb-6 relative z-10 text-left text-balance">
-                        かつての私は、外側を強引に変えることで人生を切り拓いてきました。でも、それでは望む以上の結果はなく、振り子の反動もある。
-                    </p>
-                    <p class="relative z-10 font-medium text-light text-lg text-center">
-                        <span class="text-gold">内側が整うと、望んだ以上の現実が、自然と引き寄せられてくる。</span>
-                    </p>
+                <!-- メールアドレス -->
+                <div>
+                    <label for="email" class="block font-serif text-light font-medium mb-2">メールアドレス <span class="text-xs text-navy-900 font-bold bg-gold px-2 py-1 rounded ml-2">必須</span></label>
+                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-white/10 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors text-light bg-navy-800 focus:bg-navy-900" placeholder="your@email.com">
                 </div>
 
-                <!-- 経歴詳細 (所長：白川 愁士) -->
-                <div class="fade-up mt-16 pt-12 border-t border-white/10 text-center md:text-left">
-                    <p class="text-gold tracking-widest text-sm mb-2">世界線調律所 所長</p>
-                    <p class="text-2xl md:text-3xl text-light font-serif mb-8 tracking-wider">白川 愁士</p>
-                    
-                    <div class="bg-navy-900/50 p-6 md:p-8 rounded-xl border border-white/5 text-sm md:text-base text-light/70 space-y-4 leading-relaxed text-left">
-                        <p class="font-medium text-light">【経歴】</p>
-                        <p>1978年生まれ。2男2女の父。</p>
-                        <p>不動産を軸に独立すること志し、某大手不動産仲介会社、相続コンサル、司法書士と土地家屋調査士の合同事務所勤務を経て、2014年に独立し、2016年に会社設立。地方の不動産を「路線価の半値以下で買う不動産投資家」として活動。</p>
-                        <p>その中で、幸せなお金持ちになるための成功哲学として、斎藤一人さん、小林正観さん、中村天風さんなどの思想を学んだ末、あまりに共通していることに驚き、これは科学だと気づく。</p>
-                        <p>そこから、スピリチュアルと宇宙の真理探求に目覚め、全国の神社参拝が日常になる。神社参拝で波動が上がったことで、ご縁から会社役員としてのお呼びがかかり、収入が倍増。</p>
-                        <p>その後、情報変換ヒーリングを学び、神社巡拝ヒーラーになる。</p>
+                <!-- 電話番号 -->
+                <div>
+                    <label for="tel" class="block font-serif text-light font-medium mb-2">電話番号 <span class="text-xs text-navy-900 font-bold bg-gold px-2 py-1 rounded ml-2">必須</span></label>
+                    <input type="tel" id="tel" name="tel" required class="w-full px-4 py-3 rounded-lg border border-white/10 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors text-light bg-navy-800 focus:bg-navy-900" placeholder="090-1234-5678">
+                </div>
+
+                <!-- 希望メニュー -->
+                <div>
+                    <label for="menu" class="block font-serif text-light font-medium mb-2">希望メニュー <span class="text-xs text-navy-900 font-bold bg-gold px-2 py-1 rounded ml-2">必須</span></label>
+                    <div class="relative">
+                        <select id="menu" name="menu" required class="w-full px-4 py-3 rounded-lg border border-white/10 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors text-light bg-navy-800 focus:bg-navy-900 appearance-none cursor-pointer">
+                            <option value="" disabled selected>メニューを選択してください</option>
+                            <option value="まずは相談だけしたい">まずは相談だけしたい</option>
+                            <option value="情報変換ヒーリングセッション(対面|都内限定)（60分：22,000円）">情報変換ヒーリングセッション(対面|都内限定)（60分：22,000円）</option>
+                            <option value="遠隔ヒーリング（1回：11,000円）">遠隔ヒーリング（1回：11,000円）</option>
+                            <option value="不動産 位相調律セッション（初回60~90分：33,000円）">不動産 位相調律セッション（初回60~90分：33,000円）</option>
+                            <option value="不動産・空間に対する調律ヒーリング（22,000円〜）">不動産・空間に対する調律ヒーリング（22,000円〜）</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-light/80">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                        </div>
                     </div>
                 </div>
 
-            </div>
+                <!-- 第一希望日時 -->
+                <div>
+                    <label class="block font-serif text-light font-medium mb-2">第一希望日時 <span class="text-xs text-navy-900 font-bold bg-gold px-2 py-1 rounded ml-2">必須</span></label>
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <input type="date" id="date-1" name="date-1" required class="w-full md:w-1/2 px-4 py-3 rounded-lg border border-white/10 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors text-light bg-navy-800 focus:bg-navy-900 cursor-pointer">
+                        <div class="relative w-full md:w-1/2">
+                            <select id="time-1" name="time-1" required class="w-full px-4 py-3 rounded-lg border border-white/10 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors text-light bg-navy-800 focus:bg-navy-900 appearance-none cursor-pointer">
+                                <option value="" disabled selected>希望時間を選択</option>
+                                <option value="09:00">09:00 〜</option><option value="09:30">09:30 〜</option><option value="10:00">10:00 〜</option><option value="10:30">10:30 〜</option><option value="11:00">11:00 〜</option><option value="11:30">11:30 〜</option><option value="12:00">12:00 〜</option><option value="12:30">12:30 〜</option><option value="13:00">13:00 〜</option><option value="13:30">13:30 〜</option><option value="14:00">14:00 〜</option><option value="14:30">14:30 〜</option><option value="15:00">15:00 〜</option><option value="15:30">15:30 〜</option><option value="16:00">16:00 〜</option><option value="16:30">16:30 〜</option><option value="17:00">17:00 〜</option><option value="17:30">17:30 〜</option><option value="18:00">18:00 〜</option><option value="18:30">18:30 〜</option><option value="19:00">19:00 〜</option><option value="19:30">19:30 〜</option><option value="20:00">20:00 〜</option><option value="20:30">20:30 〜</option><option value="21:00">21:00 〜</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-light/80">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <!-- CTA -->
-            <div class="mt-24 text-center fade-up">
-                <a href="reserve.html" class="btn-pulse inline-block bg-gold border-2 border-gold hover:bg-transparent text-navy-900 hover:text-gold font-serif font-medium text-lg md:text-xl py-5 px-10 md:px-12 rounded-full transition-all duration-300 transform-gpu hover:-translate-y-1 shadow-lg hover:shadow-xl">
-                    <span class="text-unit tracking-widest">【セッションのお申し込み】</span>
-                </a>
-            </div>
+                <!-- 第二希望日時 -->
+                <div>
+                    <label class="block font-serif text-light font-medium mb-2">第二希望日時 <span class="text-xs text-light/80 bg-white/10 border border-white/20 px-2 py-1 rounded ml-2">任意</span></label>
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <input type="date" id="date-2" name="date-2" class="w-full md:w-1/2 px-4 py-3 rounded-lg border border-white/10 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors text-light bg-navy-800 focus:bg-navy-900 cursor-pointer">
+                        <div class="relative w-full md:w-1/2">
+                            <select id="time-2" name="time-2" class="w-full px-4 py-3 rounded-lg border border-white/10 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors text-light bg-navy-800 focus:bg-navy-900 appearance-none cursor-pointer">
+                                <option value="" disabled selected>希望時間を選択</option>
+                                <option value="09:00">09:00 〜</option><option value="09:30">09:30 〜</option><option value="10:00">10:00 〜</option><option value="10:30">10:30 〜</option><option value="11:00">11:00 〜</option><option value="11:30">11:30 〜</option><option value="12:00">12:00 〜</option><option value="12:30">12:30 〜</option><option value="13:00">13:00 〜</option><option value="13:30">13:30 〜</option><option value="14:00">14:00 〜</option><option value="14:30">14:30 〜</option><option value="15:00">15:00 〜</option><option value="15:30">15:30 〜</option><option value="16:00">16:00 〜</option><option value="16:30">16:30 〜</option><option value="17:00">17:00 〜</option><option value="17:30">17:30 〜</option><option value="18:00">18:00 〜</option><option value="18:30">18:30 〜</option><option value="19:00">19:00 〜</option><option value="19:30">19:30 〜</option><option value="20:00">20:00 〜</option><option value="20:30">20:30 〜</option><option value="21:00">21:00 〜</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-light/80">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 第三希望日時 -->
+                <div>
+                    <label class="block font-serif text-light font-medium mb-2">第三希望日時 <span class="text-xs text-light/80 bg-white/10 border border-white/20 px-2 py-1 rounded ml-2">任意</span></label>
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <input type="date" id="date-3" name="date-3" class="w-full md:w-1/2 px-4 py-3 rounded-lg border border-white/10 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors text-light bg-navy-800 focus:bg-navy-900 cursor-pointer">
+                        <div class="relative w-full md:w-1/2">
+                            <select id="time-3" name="time-3" class="w-full px-4 py-3 rounded-lg border border-white/10 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors text-light bg-navy-800 focus:bg-navy-900 appearance-none cursor-pointer">
+                                <option value="" disabled selected>希望時間を選択</option>
+                                <option value="09:00">09:00 〜</option><option value="09:30">09:30 〜</option><option value="10:00">10:00 〜</option><option value="10:30">10:30 〜</option><option value="11:00">11:00 〜</option><option value="11:30">11:30 〜</option><option value="12:00">12:00 〜</option><option value="12:30">12:30 〜</option><option value="13:00">13:00 〜</option><option value="13:30">13:30 〜</option><option value="14:00">14:00 〜</option><option value="14:30">14:30 〜</option><option value="15:00">15:00 〜</option><option value="15:30">15:30 〜</option><option value="16:00">16:00 〜</option><option value="16:30">16:30 〜</option><option value="17:00">17:00 〜</option><option value="17:30">17:30 〜</option><option value="18:00">18:00 〜</option><option value="18:30">18:30 〜</option><option value="19:00">19:00 〜</option><option value="19:30">19:30 〜</option><option value="20:00">20:00 〜</option><option value="20:30">20:30 〜</option><option value="21:00">21:00 〜</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-light/80">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-sm text-light/60 mt-2 px-1">※カレンダーより1週間後以降の日付をご選択ください。</p>
+                </div>
+
+                <!-- 現状のお悩み -->
+                <div>
+                    <label for="message" class="block font-serif text-light font-medium mb-2">現状のお悩みやご相談内容 <span class="text-xs text-light/80 bg-white/10 border border-white/20 px-2 py-1 rounded ml-2">任意</span></label>
+                    <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 rounded-lg border border-white/10 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors text-light bg-navy-800 focus:bg-navy-900 resize-none" placeholder="現在抱えているお悩みや、変えたい現実についてご自由にお書きください。"></textarea>
+                </div>
+
+                <!-- 送信ボタン -->
+                <div class="text-center pt-4">
+                    <button type="submit" class="inline-block bg-gold border-2 border-gold hover:bg-transparent text-navy-900 hover:text-gold font-serif font-medium text-lg py-4 px-10 md:px-16 rounded-full transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl w-full md:w-auto">
+                        <span class="tracking-widest">送信する</span>
+                    </button>
+                </div>
+            </form>
         </div>
     </main>
 
     <!-- Footer -->
     <footer class="bg-navy-900 py-12 text-center border-t border-white/10">
         <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 mb-6 text-sm text-light/60 font-serif tracking-wider">
-            <button onclick="openTokushoModal()" class="hover:text-gold transition-colors focus:outline-none text-unit">特定商取引法に基づく表記</button>
-            <button onclick="openPrivacyModal()" class="hover:text-gold transition-colors focus:outline-none text-unit">利用規約・プライバシーポリシー</button>
+            <button onclick="openTokushoModal()" class="hover:text-gold transition-colors focus:outline-none">特定商取引法に基づく表記</button>
+            <button onclick="openPrivacyModal()" class="hover:text-gold transition-colors focus:outline-none">利用規約・プライバシーポリシー</button>
         </div>
         <p class="text-light/40 text-xs tracking-widest">© 2026 Trinity Healing. All Rights Reserved.</p>
     </footer>
 
-    <!-- 特定商取引法に基づく表記 モーダル (責任者：小川恵美) -->
+    <!-- 特定商取引法に基づく表記 モーダル -->
     <div id="tokusho-modal" class="fixed inset-0 z-[100] flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
         <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeTokushoModal()"></div>
         <div class="bg-navy-800 border border-white/10 rounded-2xl p-6 md:p-10 max-w-2xl w-[90%] max-h-[85vh] overflow-y-auto relative z-10 shadow-2xl transform scale-95 transition-transform duration-300" id="tokusho-modal-content">
@@ -430,6 +418,14 @@
         </div>
     </div>
 
+    <!-- 送信完了メッセージボックス (alertの代わり) -->
+    <div id="success-message" class="fixed top-24 left-1/2 -translate-x-1/2 z-[200] hidden">
+        <div class="bg-gold text-navy-900 px-8 py-4 rounded-full shadow-2xl font-bold flex items-center gap-3 border-2 border-white/20 animate-bounce">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+            <span>お申し込みを受け付けました</span>
+        </div>
+    </div>
+
     <!-- GSAP & ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -459,7 +455,7 @@
             document.body.classList.remove('overflow-hidden');
         }
 
-        document.addEventListener("DOMContentLoaded", (event) => {
+        document.addEventListener("DOMContentLoaded", () => {
             gsap.registerPlugin(ScrollTrigger);
 
             gsap.set('.fade-up', { y: 40, autoAlpha: 0 });
@@ -471,6 +467,59 @@
                     }
                 });
             });
+
+            // 施術希望日の「最短日」を本日の1週間後に設定
+            const today = new Date();
+            today.setDate(today.getDate() + 7);
+            const minDate = today.toISOString().split('T')[0];
+            ['date-1', 'date-2', 'date-3'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.min = minDate;
+            });
+
+            // フォーム送信
+            const form = document.getElementById('booking-form');
+            if (form) {
+                form.addEventListener('submit', e => {
+                    e.preventDefault();
+                    const scriptURL = 'https://script.google.com/macros/s/AKfycbwZ85PSqLkT9t6GWMPO0X1AFw-uxGxl802nlIrTI9c42w-ctt20RiBFiio6wuYF5aE/exec';
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    const successMsg = document.getElementById('success-message');
+                    
+                    const originalBtnText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '<span>送信中...</span>';
+                    submitBtn.disabled = true;
+                    submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+
+                    const formData = new FormData(form);
+                    const data = new URLSearchParams();
+                    data.append('name', formData.get('name') || '');
+                    data.append('kana', formData.get('kana') || '');
+                    data.append('email', formData.get('email') || '');
+                    data.append('phone', formData.get('tel') || '');
+                    data.append('menu', formData.get('menu') || '');
+                    data.append('date1', `${formData.get('date-1') || ''} ${formData.get('time-1') || ''}`.trim());
+                    data.append('date2', `${formData.get('date-2') || ''} ${formData.get('time-2') || ''}`.trim());
+                    data.append('date3', `${formData.get('date-3') || ''} ${formData.get('time-3') || ''}`.trim());
+                    data.append('message', formData.get('message') || '');
+
+                    fetch(scriptURL, { method: 'POST', body: data, mode: 'no-cors' })
+                        .then(() => {
+                            // メッセージボックスを表示
+                            successMsg.classList.remove('hidden');
+                            form.reset();
+                            setTimeout(() => { successMsg.classList.add('hidden'); }, 5000);
+                        })
+                        .catch(error => {
+                            console.error('Error!', error.message);
+                        })
+                        .finally(() => {
+                            submitBtn.innerHTML = originalBtnText;
+                            submitBtn.disabled = false;
+                            submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                        });
+                });
+            }
         });
     </script>
 </body>
